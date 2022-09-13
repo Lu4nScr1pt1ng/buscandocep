@@ -25,7 +25,7 @@ e colocar as informações na tela.
 
 ### Links
 
-- Live Site URL: [Vercel live](buscadordecep-seven.vercel.app)
+- Live Site URL: [Vercel live](https://buscadordecep-seven.vercel.app)
 - Desafio: [Petlove](https://github.com/petlove/vagas/tree/master/frontend)
 
 ### Como rodar

@@ -33,16 +33,24 @@ function App() {
     }
 
     async function submit() {
-      const response = await api.get(`ws/${cepInput}/json/`);
+      const response = await api.get(`ws/${cepInput}/json/`).then((data) => {
+        if (data.data.erro) {
+          return setErr('Digite um CEP válido!');
+        }
+        return data;
+      });
 
-      const data = {
-        cep: response.data.cep,
-        logradouro: response.data.logradouro,
-        localidade: response.data.localidade,
-        uf: response.data.uf,
+      if (response) {
+        const data = {
+          cep: response.data.cep,
+          logradouro: response.data.logradouro,
+          localidade: response.data.localidade,
+          uf: response.data.uf,
 
-      };
-      setCepInfo([data]);
+        };
+        setCepInfo([data]);
+      }
+
       setCepInput('');
     }
 
